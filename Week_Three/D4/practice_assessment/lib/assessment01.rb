@@ -6,12 +6,19 @@ class Array
 
   def my_inject(accumulator = nil, &prc)
     accumulator ||= self.shift
+
+    debugger
     self.each do |ele|
-      prc.call(accumulator, ele)
+      accumulator = prc.call(accumulator, ele)
     end
     accumulator
   end
+    
 end
+
+# [1, 2, 3, 4].inject(10) do |acc, el| 
+#   acc + el 
+# end
 
 # Define a method `primes(num)` that returns an array of the first "num" primes.
 # You may wish to use an `is_prime?` helper method.
@@ -46,13 +53,11 @@ end
 def factorials_rec(num)
   return [1] if num <= 1
   return [1, 1] if num == 2
-  return [1, 1, 2] if num == 3
-  factorial_list = []
 
   prev_fact = factorials_rec(num-1)
-  next_fact = num * prev_fact[-1]
+  next_fact = (num-1) * prev_fact[-1]
 
-  factorial_list << next_fact
+  prev_fact << next_fact
 end
 
 class Array
