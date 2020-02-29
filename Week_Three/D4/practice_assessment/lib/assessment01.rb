@@ -7,7 +7,6 @@ class Array
   def my_inject(accumulator = nil, &prc)
     accumulator ||= self.shift
 
-    debugger
     self.each do |ele|
       accumulator = prc.call(accumulator, ele)
     end
@@ -86,17 +85,21 @@ class String
 
   def symmetric_substrings
     sub_strings = []
+    final = []
 
-    (0...self.length-1).each do |i|
-      (i...self.length-1).each do |j|
+    (0...self.length).each do |i|
+      (i...self.length).each do |j|
         sub_strings << self[i..j]
       end
     end
     
-    sub_strings.select do |subs|
-      subs == subs.reverse && subs.length > 1
+    sub_strings.each do |subs|
+      if subs.length > 1 && subs == subs.reverse
+        final << subs
+      end
     end
 
+    final
   end
 end
 
