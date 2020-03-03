@@ -56,17 +56,16 @@ class KPF
     final_node = @root_node.dfs(end_pos)
     trace_path_back(final_node)
   end
-  #   return self if value == target
-  #   children.each do |child|
-  #       node = child.dfs(target)
-  #       return node if node
-  #   end
 ​
   def trace_path_back(end_node)
     steps = []
-    steps << end_node.value
-​
-​
+
+    curr = end_node
+    until curr.nil?
+      steps << curr.value
+      curr = curr.parent
+    end
+
     steps.reverse
   end
 end
