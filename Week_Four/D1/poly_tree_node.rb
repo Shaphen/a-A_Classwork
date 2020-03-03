@@ -20,14 +20,6 @@ class PolyTreeNode
         @parent = parent_node
         return nil if parent_node.nil?
         parent_node.children << self unless parent_node.children.include?(self)
-        # @parent = parent_node #node2 parent is nil
-        # if !parent #node parent doesn't exist?
-        #     # @parent.children.delete(self)
-        #     return nil
-        # else
-        #     parent.children.delete(self) #node1.children = [node2,node3].delete(self)
-        #     parent.children << self #node1.children << self
-        # end
     end
 
     def add_child(child_node)
@@ -46,18 +38,6 @@ class PolyTreeNode
             node = child.dfs(target)
             return node if node
         end
-        
-        # if self.value == target
-        #     return self
-        # else
-        #     if self.children
-        #         self.children.each do |child|
-        #             result = child.dfs(target)
-        #             return result unless result.nil?
-        #         end
-        #     end
-        # end
-        
         nil
     end
     
@@ -71,19 +51,6 @@ class PolyTreeNode
                 queue.unshift(child)
             end
         end
-
-        # queue = Queue.new
-        # queue.push(self)
-        # until queue.empty?
-        #     node = queue.shift
-        #     return node if node.value == target
-        #     node.children.each do |child|
-        #         queue.push(child)
-        #     end
-        # end
-
         nil
     end
 end
-
-
