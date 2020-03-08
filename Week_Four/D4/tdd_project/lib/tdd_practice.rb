@@ -35,6 +35,13 @@ class Array
   end
 
   def stock_picker # [10, 2, 5, 2, 7, 1, 4]
+
+    # max = self.max
+    # day_max = self.index(max)
+    # min = self[0...day_max].min
+    # day_min = self.index(min)
+    # return [day_min, day_max]
+    
     lowest = 0
     highest = 0 
     arr = []
