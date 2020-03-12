@@ -1,0 +1,85 @@
+html, body, div, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, aside, figure, figcaption, footer, header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1.5;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+input[type="radio"], select, input[type="submit"] {
+  cursor: pointer;
+  outline: none;
+}
+
+h2 + .user_review {
+  border-top: 1px solid black;
+}
+
+/* This is useful when implementing a grid system so that all image elements
+will take up 100% width of their containers */
+img {
+  width: 100%
+}
+
+nav {
+  block-size : inline-block;
+  padding: 20px;
+ 
+}
+
+header * {
+  display: inline;
+}
+
+a { 
+  display: inline;
+}
+
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  width: 700px;
+}
+
+aside {
+  width: 180px;
+}
+
+section, aside {
+  display: inline;
+  margin-right: 15px;
+}
+
+.ingredients-list {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#directions {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+input {
+  display: block;
+}
+
+select, input {
+  margin: 5px;
+}
+
+input[type="submit"] {
+  width: 100px;
+}
