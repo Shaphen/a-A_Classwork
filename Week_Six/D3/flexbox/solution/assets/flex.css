@@ -17,9 +17,13 @@ ul li a, figcaption a {
   color: inherit;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 header > img {
   width: 100px;
-  float: left;
 }
 
 .ingredients-list {
@@ -66,6 +70,14 @@ h2 + .user_review {
     border-top: 1px solid black;
 }
 
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+}
+
 nav ul li a {
     padding: 20px;
     display: block;
@@ -100,13 +112,4 @@ textarea {
 
 label {
     display: block;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-header ul {
-  display: flex;
 }
