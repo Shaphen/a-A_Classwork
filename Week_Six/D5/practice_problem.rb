@@ -2,19 +2,31 @@
 # Problem 1:
 # Given a pattern and a string str, determine if str follows the same pattern.
 
+def same_pattern?(pattern)
+    pattern_code = []
+    str_code = []
+    p curr = pattern[0].chars
+    p curr2 = pattern[1].split(" ")
 
+    
+    
+end
 
 # Example 1
-p pattern = "abba", str = "dog cat cat dog"
+pattern = "abba", str = "dog cat cat dog"
+p same_pattern?(pattern)
 # Output: true
 # Example 2
-p pattern = "abba", str = "dog cat cat fish"
+pattern = "abba", str = "dog cat cat fish"
+p same_pattern?(pattern)
 # Output: false
 # Example 3
-p pattern = "aaaa", str = "dog cat cat dog"
+pattern = "aaaa", str = "dog cat cat dog"
+p same_pattern?(pattern)
 # Output: false
 # Example 4
-p pattern = "abba", str = "dog dog dog dog"
+pattern = "abba", str = "dog dog dog dog"
+p same_pattern?(pattern)
 # Output: false
 # You may assume pattern contains only lowercase letters, and str contains 
 # lowercase letters that may be separated by a single space. Can you solve it 
