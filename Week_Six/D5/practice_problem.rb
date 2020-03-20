@@ -3,13 +3,23 @@
 # Given a pattern and a string str, determine if str follows the same pattern.
 
 def same_pattern?(pattern)
+    pattern = pattern[0].chars
+    str = pattern[1].split(" ")
     pattern_code = []
     str_code = []
-    p curr = pattern[0].chars
-    p curr2 = pattern[1].split(" ")
+    i = 0
 
-    
-    
+    while i < pattern.length
+        char = pattern.first
+        if pattern[i] == char
+            pattern_code << 0
+            i += 1
+        else
+            pattern_code << 1
+            pattern.shift
+        end
+    end
+    p pattern_code
 end
 
 # Example 1
