@@ -11,11 +11,14 @@ Rails.application.routes.draw do
   resources :users do
     resources :artworks, only: [:index]
     resources :artwork_shares, only: [:index]
+    resources :comments, only: [:index]
   end
   
-  resources :artworks, except: [:index] 
+  resources :artworks, except: [:index] do
+    resources :comments, only: [:index]
+  end
 
   resources :artwork_shares, only: [:index, :create, :destroy]
   
-
+  resources :comments, only: [:index, :create, :destroy]
 end
