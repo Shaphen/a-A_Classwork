@@ -1,5 +1,5 @@
 class ArtworkShare < ApplicationRecord
-    validates :viewer_id, presence: true, uniqueness: {scope: :artwork_id,
+    validates :artwork_id, presence: true, uniqueness: {scope: :viewer_id,
         message: "can't share to same person more than once"}
 
     belongs_to :viewer,
