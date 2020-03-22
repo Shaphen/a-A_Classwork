@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
             comment = Comment.where(user_id: params[:user_id])
         elsif params.has_key?(:artwork_id)
             comment = Comment.where(artwork_id: params[:artwork_id])
+        else
+            comment = Comment.all
         end
 
         render json: comment

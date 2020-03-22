@@ -10,7 +10,6 @@ class ArtworkSharesController < ApplicationController
         share = ArtworkShare.new(artwork_share_params)
 
         if share.save
-            # redirect_to "/artwork_shares/#{share.id}"
             render json: share
         else
             render json: share.errors.full_messages, status: 422
