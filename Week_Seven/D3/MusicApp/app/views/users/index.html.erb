@@ -1,8 +1,12 @@
 <h1>ALL THE USERS! \o/</h1>
+<a href=" <%= new_user_url %> ">CREATE NEW USER</a>
+
 
 <% @users.each do |user| %>
     <ul>
         <li><%= user.email %></li>
+        <a href="<%= user_url(user.id) %>">user page</a>
+        <br>
         <%= "____________________" %>
     </ul>
 <% end %>

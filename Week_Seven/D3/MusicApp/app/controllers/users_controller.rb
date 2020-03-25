@@ -14,6 +14,17 @@ class UsersController < ApplicationController
             redirec_to users_url
         end
     end
+
+    def show
+        @user = User.find(params[:id])
+        render :show
+    end
+
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+        redirect_to users_url
+    end
     
     private
 
