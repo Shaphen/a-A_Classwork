@@ -9,6 +9,7 @@ class UsersController < ApplicationController
         user = User.new(user_params)
 
         if user.save
+            login!(user)
             redirect_to user_url(user.id)
         else
             redirec_to users_url
@@ -20,11 +21,11 @@ class UsersController < ApplicationController
         render :show
     end
 
-    def destroy
-        user = User.find(params[:id])
-        user.destroy
-        redirect_to users_url
-    end
+    # def destroy
+    #     user = User.find(params[:id])
+    #     user.destroy
+    #     redirect_to users_url
+    # end
     
     private
 

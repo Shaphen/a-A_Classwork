@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+    <h4>Logged in as: <%= current_user.email %></h4>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
