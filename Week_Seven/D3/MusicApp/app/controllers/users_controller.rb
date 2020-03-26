@@ -21,11 +21,11 @@ class UsersController < ApplicationController
         render :show
     end
 
-    # def destroy
-    #     user = User.find(params[:id])
-    #     user.destroy
-    #     redirect_to users_url
-    # end
+    def destroy
+        current_user.reset_session_token!
+        session[:session_token] = nil
+        redirect_to users_url
+    end
     
     private
 

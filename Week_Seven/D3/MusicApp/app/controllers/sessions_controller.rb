@@ -7,10 +7,16 @@ class SessionsController < ApplicationController
         )
         if @user
             login!(@user)
-            redirect_to user_url(@user.id)
+            redirect_to users_url
         else
             redirect_to new_sessions_url
         end
+    end
+
+    def destroy
+        current_user.reset_session_token!
+        session[:session_token] = nil
+        redirect_to users_url
     end
     
 end

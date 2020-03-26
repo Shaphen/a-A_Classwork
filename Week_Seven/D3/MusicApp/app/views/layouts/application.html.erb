@@ -11,7 +11,21 @@
 
   <body>
     <% if logged_in? %>
-    <h4>Logged in as: <%= current_user.email %></h4>
+      <h4>Logged in as: <%= current_user.email %></h4>
+      <form action="<% sessions_url %>" method="POST">
+        <input
+          type="hidden"
+          name="_method"
+          value="DELETE">
+        <input 
+          type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+        <button type="submit">Logout</button>
+      </form>
+    <% else %>
+      <a href=" <%= new_sessions_url %> ">Login</a>
+      <a href=" <%= new_user_url %> ">Singup</a>
     <% end %>
 
     <%= yield %>
