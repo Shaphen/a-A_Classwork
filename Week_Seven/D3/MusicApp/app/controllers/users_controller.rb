@@ -20,12 +20,6 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         render :show
     end
-
-    def destroy
-        current_user.reset_session_token!
-        session[:session_token] = nil
-        redirect_to users_url
-    end
     
     private
 

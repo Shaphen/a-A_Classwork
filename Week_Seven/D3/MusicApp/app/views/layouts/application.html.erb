@@ -12,8 +12,8 @@
   <body>
     <% if logged_in? %>
       <h4>Logged in as: <%= current_user.email %></h4>
-      <form action="<% sessions_url %>" method="POST">
-        <input
+      <form action="<%= sessions_url %>" method="POST">
+        <input 
           type="hidden"
           name="_method"
           value="DELETE">
