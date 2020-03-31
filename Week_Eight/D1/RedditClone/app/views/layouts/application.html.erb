@@ -10,6 +10,28 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <marquee>Welcome <%= current_user.username %></marquee>
+
+      <form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Logout</button>
+      </form>
+
+      <form action="<%= @user %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete Account</button>
+      </form>
+    <% end %>
+
+    <ul>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,16 @@
+<h1>Sign In</h1>
+
+<form action="<%= session_url %>" method="POST">
+    <label for="username">
+        Username:
+        <input type="text" name="user[username]">
+    </label>
+
+    <label for="password">
+        Password:
+        <input type="password" name="user[password]">
+    </label>
+    <button>Create Account</button>
+</form>
+
+<a href="<%= new_user_url %>">Sign Up</a>
