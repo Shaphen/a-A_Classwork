@@ -1,19 +1,21 @@
 /* PHASE 3: Layout */
 
 .content {
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 .content-sidebar {
     min-height: 200px;
-    width: 300px;
-    margin-right: 100px;
-    display: block;
-    background-color: green;
+    width: 250px;
+    display: inline-block;
+    border: 1px solid gray;
+    background-color: white;
 }
 .content-main {
     min-height: 200px;
+    width: 650px;
     display: inline-block;
-    width: 500px;
-    background-color: indigo;
+    border: 1px solid gray;
+    background-color: white;
 }
