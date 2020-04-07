@@ -1,0 +1,1 @@
+// KILL SPACEROCKS WOOOOOO! Also inherits from MovingObject
