@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// move shit here /o/\n// methods: \n  // MovingObject.prototype.move, \n  // MovingObject.prototype.draw(ctx), \n  // MovingObject.prototype.isCollidedWith(otherMovingObject)\n\nfunction MovingObject(opts) { // How did this work?!?!\n  this.pos = opts['pos'];\n  this.vel = opts['vel'];\n  this.radius = opts['radius'];\n  this.color = opts['color'];\n}\n\n\n\nmodule.exports = MovingObject;\n\n//# sourceURL=webpack:///./src/02_movingObject.js?");
+eval("// move shit here /o/\n// methods: \n  // MovingObject.prototype.move, \n  // MovingObject.prototype.draw(ctx), \n  // MovingObject.prototype.isCollidedWith(otherMovingObject)\n\n// function MovingObject(opts) { // How did this work?!?! Its a string type\n//   this.pos = opts['pos'];\n//   this.vel = opts['vel'];\n//   this.radius = opts['radius'];\n//   this.color = opts['color'];\n// }\n\nfunction MovingObject(opts) { // How did this work?!?!\n  this.pos = opts.pos;\n  this.vel = opts.vel;\n  this.radius = opts.radius;\n  this.color = opts.color;\n}\n\nMovingObject.prototype.draw = function(ctx){\n  ctx.fillStyle = this.color;\n  ctx.beginPath();\n\n  ctx.arc(\n    this.pos[0],\n    this.pos[1],\n    this.radius,\n    0,\n    2 * Math.PI,\n    false\n  );\n\n  ctx.fill();\n}\n\nMovingObject.prototype.move = function() {\n  let newPos = [];\n  newPos.push(this.pos[0] + this.vel[0]);\n  newPos.push(this.pos[1] + this.vel[1]);\n  this.pos = newPos;\n  this.draw(ctx);\n}\n\nmodule.exports = MovingObject;\n\n//# sourceURL=webpack:///./src/02_movingObject.js?");
 
 /***/ }),
 
@@ -104,7 +104,7 @@ eval("// move shit here /o/\n// methods: \n  // MovingObject.prototype.move, \n 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// console.log(\"Webpack is working!\");\nconst MovingObject = __webpack_require__(/*! ./02_movingObject.js */ \"./src/02_movingObject.js\");\nwindow.MovingObject = MovingObject;\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// console.log(\"Webpack is working!\");\nconst MovingObject = __webpack_require__(/*! ./02_movingObject.js */ \"./src/02_movingObject.js\");\nwindow.MovingObject = MovingObject;\n\nwindow.addEventListener('DOMContentLoaded',function (event) {\n    let canvas = document.getElementById('game-canvas');\n    let ctx = canvas.getContext('2d');\n    window.canvas = canvas;\n    window.ctx = ctx;\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
