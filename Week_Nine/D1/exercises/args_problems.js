@@ -113,21 +113,3 @@ Function.prototype.curry = function(numArgs){
 const sumThis = sum.curry(4);
 sumThis(5)(30)(20)(1); // => 56
 
-
-
-Function.prototype.curry = function (numArgs) {
-
-  let results = [];
-
-  return _curried = (args) => {
-    results.push(args);
-    if (results.length === numArgs) {
-      return this(results);
-    } else {
-      return _curried;
-    }
-  }
-
-}
-const sumThis = sum.curry(4);
-sumThis([5, 30, 20, 1]) //apply version
