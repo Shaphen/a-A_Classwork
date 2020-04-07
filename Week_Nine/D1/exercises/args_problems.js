@@ -42,7 +42,7 @@ Object.prototype.myBind = function(newthis){
   // method("hello", "person")
   // newthis.prototype.method = this;
   
-  let method = this; //says
+  let method = this;  //function we want to bind to context/newthis
   let args = Array.from(arguments).slice(1); //capture args other than first
 
   return function(){
@@ -51,7 +51,6 @@ Object.prototype.myBind = function(newthis){
     let combined = args.concat(innerArgs);
     return method.call(newthis, ...combined); //method.apply(newthis, combined);
   }
-  // debugger
 }
 
 const markov = new Cat("Markov");
@@ -96,14 +95,13 @@ function sum(arg) {
   }
   return acc
 }
-Function.prototype.curry = function(numArgs){
-
+Function.prototype.curry = function(numArgs, cntx = null){
   let results = [];
 
   return _curried = (arg) => {
     results.push(arg);
     if (results.length === numArgs){
-      return this(results);
+      return this.call(cntx, ...results);
     } else {
       return _curried;
     }
@@ -113,3 +111,26 @@ Function.prototype.curry = function(numArgs){
 const sumThis = sum.curry(4);
 sumThis(5)(30)(20)(1); // => 56
 
+//_________________________________________________________________
+
+// cleaner version myBind
+Function.prototype.myBind = function (context, ...bindArgs) {
+  const method = this;
+
+  return function (...callArgs) {
+    const args = bindArgs.concat(callArgs);
+    return method.apply(context, args);
+  }
+}
+
+// cleaner version of myCurry
+Function.prototype.myCurry = function (numArgs, context = null) {
+  let args = [];
+
+  return _curried = (arg) => {
+    args.push(arg);
+    if (args.length === numArgs) {
+      return this.call(context, ...args);
+    } else return _curried;
+  }
+}
