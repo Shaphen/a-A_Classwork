@@ -32,10 +32,17 @@ class View {
     $square.text(mark);
 
     if (this.game.isOver()) {
-      let $p = $('<h1></h1>');
-      $p.addClass("congrats");
-      $p.text(`Congratlations ${mark}. You win`);
-      $('ul').append($p);
+      if (this.game.winner()) {
+        let $p = $('<h1></h1>');
+        $p.addClass("congrats");
+        $p.text(`Congratlations ${mark}. You win!`);
+        $('ul').append($p);
+      }else {
+        let $p = $('<h1></h1>');
+        $p.addClass("congrats");
+        $p.text(`Congratlations X and O. You both lose!`);
+        $('ul').append($p);
+      }
     }
 
   }

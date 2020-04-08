@@ -1,8 +1,31 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.ttt{
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .board {
-  width: 607px;
+  width: 360px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
+  padding-left: 0;
+
 }
 
 .initial {
@@ -10,10 +33,10 @@
 }
 
 .square {
-  width: 200px;
-  height: 200px;
+  width: 115px;
+  height: 100px;
   padding-bottom: 15px;
-  border: 1px solid black;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,24 +61,26 @@
 @keyframes example {
 
     0% {
-        /* font-size: 10px; */
-        /* transform: rotate(0deg); */
-        /* background-color: red; */
-        transform: translateX(200%);
+        font-size: 10px;
+        transform: rotate(0deg);
+        color: greenyellow;
+        transform: translateX(0px);
     }
+
+
 
     50% {
-        /* font-size: 30px; */
-        /* transform: rotate(360deg); */
-        /* background-color: peru; */
-        transform: translateX(70%);
+        color: peru;
+        transform: translateX(200px);
     }
 
+   
+
     100%{
-        /* font-size: 50px; */
-        /* transform: rotate(760deg); */
-        /* background-color: greenyellow; */
-        transform: translateX(0%);
+        font-size: 30px;
+        transform: rotate(760deg);
+        color: red;
+        transform: translateX(0px);
     }
 
   /* from {background-color: red;}
@@ -63,11 +88,20 @@
 }
 
 .congrats {
-    animation: example 2s infinite;
+    animation: example 2s ease-in-out;
     /* position: absolute; */
+    color: red;
+    font-size: 30px;
     /* left: 700px; */
-    /* top: 300px; */
+    /* top: 300px;  */
 }
+
+
+/* h2{
+    animation: example 2s;
+    color: red;
+    font-size: 30px;
+} */
 
 
 
