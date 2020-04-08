@@ -5,6 +5,8 @@ const Asteroid = require('./03_asteroid.js');
 window.Asteroid = Asteroid;
 const Util = require('./01_util.js');
 window.Util = Util;
+const Game = require('./06_game.js');
+window.Game = Game;
 
 window.addEventListener('DOMContentLoaded',function (event) {
     let canvas = document.getElementById('game-canvas');

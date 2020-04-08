@@ -39,7 +39,7 @@ MovingObject.prototype.move = function() {
   newPos.push(this.pos[0] + this.vel[0]);
   newPos.push(this.pos[1] + this.vel[1]);
   this.pos = newPos;
-  this.draw(ctx);
+  
 }
 
 module.exports = MovingObject;

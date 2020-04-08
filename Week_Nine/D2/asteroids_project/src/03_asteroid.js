@@ -1,18 +1,19 @@
 // Spacerock? It inherits from MovingObject
+const Util = require('./01_util.js');
+const MovingObject = require('./02_movingObject.js');
+const DEFAULT = {
+    RADIUS: 7,
+    COLOR: 'purple',
+};
 
 function Asteroid(obj) {
-    // Util.inherits(MovingObject, Asteroid);
-    this.COLOR = '#8B008B';
-    this.RADIUS = 15;
-    this.pos = obj.pos;
-    // let asteroid = new MovingObject({
-    //     pos: this.pos, 
-    //     vel: Util.randomVec(10), 
-    //     radius: this.RADIUS, 
-    //     color: this.COLOR
-    // });
+    obj.radius = DEFAULT.RADIUS;
+    obj.vel = Util.randomVec(8);
+    obj.color = DEFAULT.COLOR;
+    MovingObject.call(this, obj)
 
-    // asteroid.draw(ctx);
 }
 
-// module.exports = Asteroid;
+Util.inherits(MovingObject, Asteroid);
+
+module.exports = Asteroid;
