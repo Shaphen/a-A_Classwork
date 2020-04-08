@@ -1,0 +1,74 @@
+.board {
+  width: 607px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.initial {
+  background-color: gray;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  padding-bottom: 15px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 100px;
+  /* background-color: gray; */
+}
+
+.square:hover {
+  background-color: yellow;
+}
+
+.x {
+  background-color: rgb(208, 187, 223) !important;
+}
+
+.o {
+  background-color: teal !important;
+}
+
+
+@keyframes example {
+
+    0% {
+        /* font-size: 10px; */
+        /* transform: rotate(0deg); */
+        /* background-color: red; */
+        transform: translateX(200%);
+    }
+
+    50% {
+        /* font-size: 30px; */
+        /* transform: rotate(360deg); */
+        /* background-color: peru; */
+        transform: translateX(70%);
+    }
+
+    100%{
+        /* font-size: 50px; */
+        /* transform: rotate(760deg); */
+        /* background-color: greenyellow; */
+        transform: translateX(0%);
+    }
+
+  /* from {background-color: red;}
+  to {background-color: yellow;} */
+}
+
+.congrats {
+    animation: example 2s infinite;
+    /* position: absolute; */
+    /* left: 700px; */
+    /* top: 300px; */
+}
+
+
+
+
