@@ -2,6 +2,7 @@ class View {
   constructor(game, $el) {
     this.game = game;
     this.$el = $el;
+    this.prevWinner = [];
   }
 
   bindEvents() {
@@ -33,11 +34,31 @@ class View {
 
     if (this.game.isOver()) {
       if (this.game.winner()) {
-        let $p = $('<h1></h1>');
-        $p.addClass("congrats");
-        $p.text(`Congratlations ${mark}. You win!`);
-        $('ul').append($p);
-      }else {
+        this.prevWinner.push(mark)
+        if (this.prevWinner.length === 2) {
+          this.printSaltyMessage(mark)
+        } else if (this.prevWinner.length === 3) {
+          let $p = $('<h1></h1>');
+          $p.addClass("congrats");
+          $p.text(`Really...`);
+          $('ul').append($p);
+        } else if (this.prevWinner.length === 4) {
+          let $p = $('<h1></h1>');
+          $p.addClass("congrats");
+          $p.text(`This isn't funny anymore`);
+          $('ul').append($p);
+        } else if (this.prevWinner.length >= 3) {
+          let $p = $('<h1></h1>');
+          $p.addClass("congrats");
+          $p.text(`HAHA! YOU RAN OUT OF SPACE`);
+          $('ul').append($p);
+        } else {
+          let $p = $('<h1></h1>');
+          $p.addClass("congrats");
+          $p.text(`Congratlations ${mark}. You win!`);
+          $('ul').append($p);
+        }
+      } else {
         let $p = $('<h1></h1>');
         $p.addClass("congrats");
         $p.text(`Congratlations X and O. You both lose!`);
@@ -47,6 +68,20 @@ class View {
 
   }
 
+
+  printSaltyMessage(mark) {
+    if (mark === "x"){
+        let $p = $('<h1></h1>');
+        $p.addClass("congrats");
+      $p.text(`Looks like X doesn't know how to accept reality`);
+        $('ul').append($p);
+    }else {
+      let $p = $('<h1></h1>');
+      $p.addClass("congrats");
+      $p.text(`Looks like O doesn't know how to accept reality`);
+      $('ul').append($p);
+    }
+  }
 
 
 
