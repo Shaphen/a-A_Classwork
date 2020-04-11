@@ -86,14 +86,25 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/dom_node_collection.js":
+/*!************************************!*\
+  !*** ./src/dom_node_collection.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("class DOMNodeCollection {\n    constructor(HTMLeles) {\n        this.eles = HTMLeles;\n    }\n\n    html(arg) {\n        let newVals = [];\n        if (arg) {\n            for(let i = 0; i < this.eles.length; i++) {\n                this.eles[i].innerText = arg;\n                newVals.push(this.eles[i])\n            }\n        } else {\n            return this.eles[0];\n        }\n        return newVals;\n    }\n\n    empty() {\n      let emptied = []\n      for (let i = 0; i < this.eles.length; i++) {\n        this.eles[i].innerText = \"\";\n        emptied.push(this.eles[i]);\n      }\n      return emptied;\n    }\n}\n\nmodule.exports = DOMNodeCollection\n\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("// elementList = parentNode.querySelectorAll(selectors);\n\nwindow.$l = (arg) => {\n  if (typeof arg === \"string\") {\n    // debugger\n    let  eleList = document.querySelectorAll(arg);\n    let eleArr = Array.from(eleList);\n    return eleArr;\n  }\n}\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// elementList = parentNode.querySelectorAll(selectors);\nlet DOMNodeCollection = __webpack_require__(/*! ./dom_node_collection.js */ \"./src/dom_node_collection.js\");\n\nwindow.$l = (arg) => {\n  if (typeof arg === \"string\") { //\".banana\"\n    // debugger\n    let eleList = document.querySelectorAll(arg);\n    let eleArr = Array.from(eleList);\n    return new DOMNodeCollection(eleArr);\n  } else if (arg instanceof HTMLElement){\n    return new DOMNodeCollection([arg]);\n  }\n}\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
