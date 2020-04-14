@@ -1,0 +1,27 @@
+h1 {
+  font-family: sans-serif
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 auto;
+  width: 400px;
+  background-color: orange;
+  border: 1px solid black;
+  color: white;
+  font-size: 35px;
+}
+
+#clock {
+  width: 100%;
+  font-weight: bold;
+  font-size: 30px;
+}
