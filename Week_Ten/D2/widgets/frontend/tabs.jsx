@@ -17,7 +17,7 @@ class Tabs extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="tabs">
         <ul>
           {
             this.props.name.map( (tab, idx) => {
