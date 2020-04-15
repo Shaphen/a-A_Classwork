@@ -16,6 +16,7 @@ class Tabs extends React.Component {
   }
 
   render() {
+    let checkActive = idx === this.state.selectedTab ? 'active' : ''
     return (
       <div className="tabs">
         <h1 className="tabs-title"> Tabs </h1>
@@ -23,7 +24,11 @@ class Tabs extends React.Component {
           {
             this.props.name.map( (tab, idx) => {
               return(
-                <h1 key={idx} onClick={() => this.setTab(idx)}> { tab.title }</h1>
+                <h1 
+                  className={checkActive}
+                  key={idx} onClick={() => this.setTab(idx)}>
+                  { tab.title }
+                </h1>
               )
             })
           }

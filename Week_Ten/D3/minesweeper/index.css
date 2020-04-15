@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.game{
+    /* text-align: center; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: fantasy;
+    background-color: rgb(173, 252, 225);
+    width: 500px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+}
+.board{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.row {
+    
+}
+
+.tile{
+    background-color:antiquewhite;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    line-height: 240%;
+    text-align: center;
+    color: white;
+    text-shadow: -1px 0 black,
+    0 1px black,
+    1px 0 black,
+    0 -1px black;
+}
+
+.window{
+    /* position: absolute;
+    top: 50px; */
+    background-color: rgb(250, 157, 76);
+    width: 35%;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    text-shadow: -1px 0 black,
+    0 1px black,
+    1px 0 black,
+    0 -1px black;
+    margin-top: 40px;
+    border-radius: 20px;
+    font-size: 10px;
+    border: 1px solid black;
+
+}
+
+button:focus {
+        outline: 0;
+}
+
+.window button {
+  margin-bottom: 20px;
+  font-family: fantasy;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid black;
+  line-height: 250%;
+  box-shadow: 3px 3px;
+}
+
+.window button:hover{
+  background-color: rgb(194, 197, 197);
+  cursor: pointer;
+  box-shadow: 3px 3px;
+}
+
+.window button:active{
+  box-shadow: 0px 0px;
+}
+
+.explored{
+    background-color: rgb(184, 159, 127)
+}
+
+.bombed {
+  background-color: rgb(230, 70, 70);
+}
