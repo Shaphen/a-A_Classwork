@@ -199,15 +199,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Root() {
+  var fill1 = "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Vel tenetur nulla delectus possimus deleniti minima unde dolor libero";
+  var fill2 = "Aliquid, ea! Sit eos iste in accusantium id distinctio doloribus dignissimos hic.";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: [{
       title: "T1",
-      content: "C1"
+      content: fill1
     }, {
       title: "T2",
-      content: "C2"
+      content: fill2
     }]
   }));
 }
@@ -285,7 +287,9 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tabs"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.name.map(function (tab, idx) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "tabs-title"
+      }, " Tabs "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.name.map(function (tab, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           key: idx,
           onClick: function onClick() {

@@ -18,6 +18,7 @@ class Tabs extends React.Component {
   render() {
     return (
       <div className="tabs">
+        <h1 className="tabs-title"> Tabs </h1>
         <ul>
           {
             this.props.name.map( (tab, idx) => {
