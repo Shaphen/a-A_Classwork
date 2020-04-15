@@ -5,14 +5,16 @@ h1 {
 .container {
   display: flex;
   justify-content: center;
+  /* align-items: center; */
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .time {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 400px;
   background-color: orange;
   border: 1px solid black;
@@ -20,7 +22,8 @@ h1 {
   font-size: 35px;
 }
 
-#clock {
+.clock {
+  text-align: center;
   width: 100%;
   font-weight: bold;
   font-size: 30px;
