@@ -19,7 +19,7 @@ class Board extends React.Component{
                         <div key={idx1} className="row">
                             {
                               row.map((tile,idx2) => {
-                                  return <Tile tile={tile} updateGame={this.props.updateGame} key={`${idx1}-${idx2}`} /> //keyTile={`${idx1}-${idx2}`}/>
+                                  return <Tile tile={tile} updateGame={this.props.updateGame} key={`${idx1}-${idx2}`} />
                               })
                             }
                         </div>
