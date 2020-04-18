@@ -9,13 +9,19 @@ class TodoForm extends React.Component {
       body: "",
       done: false
     };
-    this.updateTodo = this.updateTodo.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
+    this.updateBody = this.updateBody.bind(this);
     this.toggleDone = this.toggleDone.bind(this);
   }
 
-  updateTodo(event) {
+  updateTitle(event) {
     this.setState({
       title: event.currentTarget.value,
+    });
+  }
+
+  updateBody(event) {
+    this.setState({
       body: event.currentTarget.value,
     });
   }
@@ -29,11 +35,11 @@ class TodoForm extends React.Component {
     return (
       <div>
         <label> Title
-          <input onChange={ this.updateTodo } value={ this.state.title } />
+          <input onChange={ this.updateTitle } value={ this.state.title } />
         </label>
 
         <label> Body
-          <input type='text' onChange={ this.updateTodo } value={ this.state.body } />
+          <input type='text' onChange={ this.updateBody } value={ this.state.body } />
         </label>
         <button onClick={this.toggleDone}>Done</button> {this.state.done ? "✅" : ""}
         <button>Create new ToDo! </button>
