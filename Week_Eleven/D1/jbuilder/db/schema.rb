@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20170714204346) do
     t.index ["guest_id"], name: "index_gifts_on_guest_id"
   end
 
-  create_table "guests", force: :cascade do |t|
+  create_
+  table "guests", force: :cascade do |t|
     t.string "name", null: false
     t.integer "age", null: false
     t.string "favorite_color", null: false

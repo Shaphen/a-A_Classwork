@@ -11,7 +11,7 @@ describe 'Guests' do
       get '/api/guests/1'
       expect(json['name']).to eq('John Smith')
       expect(json['age']).to eq(45)
-      expect(json['favorite_color']).to eq('Blue')
+      expect(json['favorite_color']).to eq('Blue')     
     end
 
     it 'the show page doesn\'t show too much information' do
