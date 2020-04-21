@@ -1,6 +1,12 @@
 {
   "name": "pokedex",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "pokedex.jsx",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
@@ -15,18 +21,12 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
-  "version": "1.0.0",
-  "main": "webpack.config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }
