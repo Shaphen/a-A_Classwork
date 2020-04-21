@@ -97,7 +97,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_POKEMON", function() { return RECEIVE_ALL_POKEMON; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllPokemon", function() { return receiveAllPokemon; });
-// import * as ApiUtil from '../util/api_util.js';
 var RECEIVE_ALL_POKEMON = "RECEIVE_ALL_POKEMON";
 var receiveAllPokemon = function receiveAllPokemon(pokemon) {
   return {
@@ -187,14 +186,11 @@ var pokemonReducer = function pokemonReducer() {
 
   switch (action.type) {
     case _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_POKEMON"]:
-      action.pokemon.forEach(function (mon) {
-        nextState[mon.id] = mon;
-      });
+      nextState = action.pokemon;
       return nextState;
-    // return Object.assign(nextState, action.pokemon);
 
     default:
-      state;
+      return state;
   }
 };
 
