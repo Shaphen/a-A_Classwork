@@ -21,7 +21,7 @@ export const receiveErrors = errors => ({
 export const login = formUser => dispatch => postUser(formUser)
   .then(user => dispatch(receiveCurrentUser(user)));
 
-export const logout = dispatch => deleteSession()
+export const logout = () => dispatch => deleteSession()
   .then(() => dispatch(logoutCurrentUser()));
 
 export const signUp = formUser => dispatch => postSession(formUser)
