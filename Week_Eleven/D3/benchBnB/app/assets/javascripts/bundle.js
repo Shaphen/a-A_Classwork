@@ -99,12 +99,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
 
+ // test imports
+
+ // end test imports
 
 document.addEventListener("DOMContentLoaded", function () {
+  // test code
+  window.signup = _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__["postUser"];
+  window.login = _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__["postSession"];
+  window.logout = _util_session_api_util__WEBPACK_IMPORTED_MODULE_2__["deleteSession"]; // end test code
+
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to BenchBnB"), root);
 });
+
+/***/ }),
+
+/***/ "./frontend/util/session_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/session_api_util.js ***!
+  \*******************************************/
+/*! exports provided: postUser, postSession, deleteSession */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postUser", function() { return postUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postSession", function() { return postSession; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteSession", function() { return deleteSession; });
+var postUser = function postUser(user) {
+  $.ajax({
+    url: "/api/users",
+    method: "POST",
+    data: {
+      user: user
+    }
+  });
+};
+var postSession = function postSession(user) {
+  $.ajax({
+    url: "/api/session",
+    method: "POST",
+    data: {
+      user: user
+    }
+  });
+};
+var deleteSession = function deleteSession() {
+  $.ajax({
+    url: "/api/session",
+    method: "DELETE"
+  });
+};
 
 /***/ }),
 
