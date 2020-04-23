@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postSession", function() { return postSession; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteSession", function() { return deleteSession; });
 var postUser = function postUser(user) {
-  $.ajax({
+  return $.ajax({
     url: "/api/users",
     method: "POST",
     data: {
@@ -139,7 +139,7 @@ var postUser = function postUser(user) {
   });
 };
 var postSession = function postSession(user) {
-  $.ajax({
+  return $.ajax({
     url: "/api/session",
     method: "POST",
     data: {
@@ -148,7 +148,7 @@ var postSession = function postSession(user) {
   });
 };
 var deleteSession = function deleteSession() {
-  $.ajax({
+  return $.ajax({
     url: "/api/session",
     method: "DELETE"
   });
