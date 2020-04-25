@@ -12,3 +12,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm)
+
+// if you joined my room welcome in! But...
+// afk for bathroom lol

@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
     return(
       <div>
         <h1>
-          {this.props.formType === 'login' ? "Log In" : "Sign Up"}
+          {this.props.formType}
         </h1>
         <form>
           <ul>
