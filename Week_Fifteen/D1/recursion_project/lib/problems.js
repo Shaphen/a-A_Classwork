@@ -17,7 +17,10 @@
 // lucasNumber(5)   // => 11
 // lucasNumber(9)   // => 76
 function lucasNumber(n) {
+    if (n <= 0) return 2;
+    if (n === 1) return 1;
 
+    return lucasNumber(n - 1) + lucasNumber(n - 2);
 }
 
 
@@ -33,7 +36,10 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
+    if (array.length === 0) return 0;
+    if (array.length === 1) return array[0];
 
+    return array[0] + sumArray(array.slice(1));
 }
 
 
@@ -49,7 +55,10 @@ function sumArray(array) {
 // reverseString("internet")    // => "tenretni"
 // reverseString("friends")     // => "sdneirf"
 function reverseString(str) {
+    if (str.length === 0) return "";
+    if (str.length === 1) return str;
 
+    return reverseString(str.slice(1)) + str[0]
 }
 
 
@@ -57,7 +66,7 @@ function reverseString(str) {
 // The function should calculate the base raised to the exponent power.
 //
 // Note: 
-// A negative exponent can be calculate by taking the reciprocal of the positive exponent.
+// A negative exponent can be calculated by taking the reciprocal of the positive exponent.
 // That is, pow(2, -5) is equal to 1 / pow(2, 5)
 // 
 // Solve this recursively!
@@ -69,8 +78,15 @@ function reverseString(str) {
 // pow(2, 5)    // => 32
 // pow(3, 4)    // => 81
 // pow(2, -5)   // => 0.03125
-function pow(base, exponent) {
+function pow(base, exp) {
+    if (exp === 0) return 1;
+    if (exp === 1) return base;
 
+    if (exp > 0) {
+        return base * pow(base, (exp - 1));
+    } else {
+        return pow(base, (exp + 1)) / base;
+    }
 }
 
 
@@ -103,7 +119,17 @@ function pow(base, exponent) {
 //     2-dimensional array: [['some data']]
 //     3-dimensional array: [[['some data']]]
 function flatten(data) {
+    let flattened = [];
 
+    data.forEach(ele => {
+        if (ele instanceof Array) {
+            flattened = flattened.concat(flatten(ele));
+        } else {
+            flattened.push(ele);
+        }
+    });
+
+    return flattened;
 }
 
 // Write a function, fileFinder(directories, targetFile), that accepts an object representing directories and a string respresenting a filename.
@@ -145,8 +171,13 @@ function flatten(data) {
 // fileFinder(desktop, 'app_academy_logo.svg');     // => true
 // fileFinder(desktop, 'everlong.flac');            // => true
 // fileFinder(desktop, 'sequoia.jpeg');             // => false
-function fileFinder(directories, targetFile) {
-
+function fileFinder(dir, target) {
+    for (let key in dir) {
+        if (key === target || fileFinder(dir[key], target)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -159,8 +190,17 @@ function fileFinder(directories, targetFile) {
 // pathFinder(desktop, 'trixie_lou.jpeg'));     // => '/images/pets/trixie_lou.jpeg'
 // pathFinder(desktop, 'everlong.flac'));       // => '/music/genres/rock/everlong.flac'
 // pathFinder(desktop, 'honeybadger.png'));     // => null
-function pathFinder(directories, targetFile) {
+function pathFinder(dir, target) {
+    for (let key in dir) {
+        let subPath = pathFinder(dir[key], target)
 
+        if (key === target) {
+            return "/" + target;
+        } else if (subPath !== null) {
+            return key + subPath
+        }
+    }
+    return null;
 }
 
 
