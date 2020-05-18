@@ -16,7 +16,7 @@ const logoutCurrentUser = () => ({
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
-})
+});
 
 export const login = formUser => dispatch => postUser(formUser)
   .then(user => dispatch(receiveCurrentUser(user)));
