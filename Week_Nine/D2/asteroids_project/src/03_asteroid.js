@@ -11,7 +11,6 @@ function Asteroid(obj) {
     obj.vel = Util.randomVec(8);
     obj.color = DEFAULT.COLOR;
     MovingObject.call(this, obj)
-
 }
 
 Util.inherits(MovingObject, Asteroid);
